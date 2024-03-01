@@ -164,12 +164,6 @@ Use map.yaml file next to this README.md and paste its content into map.yaml fil
 ```console
 gcloud compute url-maps import apis --source=map.yaml
 ```
-NOTE: for some reason I get (gcloud.compute.url-maps.validate) HTTPError 400: Invalid value for field 'resource.pathMatchers[0].defaultService': 'https://www.googleapis.com/compute/v1/projects/play-ic-dev-lgp/europe-west1/backendServices/apis'. The URL is malformed.
-
-@Eduardo please help me understand what is wrong in this yaml. Luckilly testing the initial http/2 related error we do not need this mapping (its just for cors which I already tested as working correctly). So to proceed I just ran the following to always direct traffic to the *internal-gateway*:
-```console
-gcloud compute url-maps set-default-service apis --default-service=projects/play-ic-dev-lgp/regions/europe-west1/backendServices/apis --region=europe-west1
-```
 
 ### Create load balancer (https-proxy, forwarding rule)
 0. Set project
