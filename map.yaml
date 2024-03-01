@@ -1,4 +1,4 @@
-defaultService: https://www.googleapis.com/compute/v1/projects/play-org-bvz/europe-west1/backendServices/apis-preflight
+defaultService: https://www.googleapis.com/compute/v1/projects/play-org-bvz/regions/europe-west1/backendServices/apis-preflight
 kind: compute#urlMap
 name: apis
 hostRules:
@@ -6,7 +6,7 @@ hostRules:
   - '*'
   pathMatcher: path-matcher-1
 pathMatchers:
-- defaultService: https://www.googleapis.com/compute/v1/projects/play-ic-dev-lgp/europe-west1/backendServices/apis
+- defaultService: https://www.googleapis.com/compute/v1/projects/play-ic-dev-lgp/regions/europe-west1/backendServices/apis
   name: path-matcher-1
   routeRules:
     - matchRules:
@@ -15,4 +15,4 @@ pathMatchers:
             - headerName: Access-Control-Headers-Request
               presentMatch: true
       priority: 0
-      service: https://www.googleapis.com/compute/v1/projects/play-org-bvz/europe-west1/backendServices/apis-preflight
+      service: https://www.googleapis.com/compute/v1/projects/play-org-bvz/regions/europe-west1/backendServices/apis-preflight
